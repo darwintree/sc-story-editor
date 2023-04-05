@@ -1,6 +1,6 @@
-import { Frame, CharacterSpine } from "./interfaces";
+import { FrameData, FrameInstance, CharacterSpine } from "./interfaces";
 
-function createFrame(frameData: Frame): Frame {
+function createFrame(frameData: FrameData): FrameInstance {
   return {
     ...frameData,
     setSpine: function (spine: CharacterSpine) {
@@ -12,3 +12,4 @@ function createFrame(frameData: Frame): Frame {
   }
 }
 
+export { createFrame }

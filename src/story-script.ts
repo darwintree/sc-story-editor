@@ -1,9 +1,9 @@
-import { Frame } from "./interfaces";
+import { FrameData } from "./interfaces";
 import fs from "fs";
 
 class StoryScript {
-  frames: Frame[] = [];
-  addFrame(frame: Frame) {
+  frames: FrameData[] = [];
+  addFrame(frame: FrameData) {
     // uses deep copy
     this.frames.push(JSON.parse(JSON.stringify(frame)));
   }

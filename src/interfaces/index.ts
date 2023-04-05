@@ -11,11 +11,10 @@ import {
 } from "./optional-types";
 
 // Frame interface
-type Frame = {
+type FrameData = {
   id?: number;
   movie?: string;
   label?: string;
-  setSpine(spine: CharacterSpine): void;
 } & Optional<Character> &
   Optional<Bg> &
   Optional<Fg> &
@@ -26,4 +25,8 @@ type Frame = {
   Optional<Still> &
   Optional<Wait>;
 
-export type { CharacterSpine, Frame };
+type FrameInstance = {
+  setSpine(spine: CharacterSpine): void;
+} & FrameData;
+
+export type { CharacterSpine, FrameData, FrameInstance };
