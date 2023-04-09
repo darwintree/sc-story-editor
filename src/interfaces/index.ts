@@ -1,4 +1,10 @@
-import { Character, CharacterSpine } from "./character";
+import {
+  Character,
+  CharSpine,
+  CharAnim,
+  CharPosition,
+  CharEffect,
+} from "./character";
 import {
   Bg,
   Fg,
@@ -25,8 +31,23 @@ type FrameData = {
   Optional<Still> &
   Optional<Wait>;
 
+// checkValidity
 type FrameInstance = {
-  setSpine(spine: CharacterSpine): void;
+  copy(): FrameInstance;
+  setSpine(spine: CharSpine): FrameInstance;
+  setAnim(charAnim: CharAnim): FrameInstance;
+  setCharLabel(charLabel: string): FrameInstance;
+  /**
+   *
+   * @param charPositon. recommended x: 568/796/310/936/200/686/420/150/986
+   * @returns
+   */
+  setPosition(charPosition: CharPosition): FrameInstance;
+  setCharEffect(charEffect: CharEffect): FrameInstance;
+  setFrameText(frameText: FrameText): FrameInstance;
+  clearText(): FrameInstance;
+  setVoice(voice: string): FrameInstance;
+  normalize(): FrameData;
 } & FrameData;
 
-export type { CharacterSpine, FrameData, FrameInstance };
+export type { CharSpine, CharAnim, FrameData, FrameInstance };

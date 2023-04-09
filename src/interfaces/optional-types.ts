@@ -15,9 +15,9 @@ type Fg = {
 type FrameText = {
   speaker: string;
   text: string;
-  textCtrl: TextCtrl;
-  textWait: number;
-  textFrame: string;
+  textCtrl?: TextCtrl;
+  textWait?: number;
+  textFrame?: string;
 }
 
 interface EffectValue {
@@ -47,11 +47,10 @@ type Select = {
 }
 
 type Sound = {
-  charLabel: string; // not used
-  bgm: string;
-  se: string;
-  voice: string;
-  voiceKeep: boolean;
+  bgm?: string;
+  se?: string;
+  voice?: string;
+  voiceKeep?: boolean;
 }
 
 type Wait = {

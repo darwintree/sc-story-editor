@@ -1,0 +1,30 @@
+[
+  {
+    "bg": "00007",
+    "textFrame": "off"
+  },
+  {
+    "charLabel": "meguru",
+    "charId": "1040030060",
+    "charCategory": "stand_costume",
+    "charType": "idols",
+    "charAnim1": "wait3",
+    "charAnim2": "blank",
+    "charAnim3": "lip_smile",
+    "charLipAnim": "lip_smile",
+    "charEffect": {
+      "type": "to",
+      "time": 100,
+      "alpha": 1
+    },
+    "speaker": "めぐる",
+    "text": "ねえ",
+    "textCtrl": "p",
+    "textFrame": "001",
+    "charPosition": {
+      "x": 568,
+      "y": 640,
+      "order": 0
+    }
+  }
+]

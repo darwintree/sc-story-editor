@@ -1,4 +1,4 @@
-import { FrameData, FrameInstance, CharacterSpine } from "../src/interfaces";
+import { FrameData, FrameInstance, CharSpine } from "../src/interfaces";
 import { createFrame } from "../src/frame"; // Make sure to export the createFrame function in the original file
 
 describe("createFrame", () => {
@@ -20,7 +20,7 @@ describe("createFrame", () => {
       charType: "idols",
     };
 
-    const spine: CharacterSpine = {
+    const spine: CharSpine = {
       charId: "2",
       charCategory: "stand",
       charType: "idols",

@@ -5,25 +5,25 @@ import {
   CharAnim4,
   CharAnim5,
   CharLipAnim,
-} from './enums'
+} from "./enums";
 
 interface CharPosition {
-  x: number;
-  y: number;
-  order: number;
+  x: 568 | 796 | 310 | 936 | 200 | 686 | 420 | 150 | 986;
+  y?: number;
+  order?: number;
 }
 
 interface CharEffect {
   x?: number;
   y?: number;
-  type: "from" | "to";
+  type?: "from" | "to"; // will defaults to "to"
   alpha: 0 | 1;
-  time: number;
+  time?: number; // defauts to 100
   scale?: number;
 }
 
 // used to load spine
-type CharacterSpine = {
+type CharSpine = {
   charId: string;
   charCategory:
     | "cb"
@@ -39,24 +39,29 @@ type CharacterSpine = {
   charType: "characters" | "idols" | "sub_characters";
 };
 
+type CharAnim = {
+  charAnim1?: CharAnim1;
+  charAnim2?: CharAnim2;
+  charAnim3?: CharAnim3;
+  charAnim4?: CharAnim4;
+  charAnim5?: CharAnim5;
+  charAnim1Loop?: boolean; // always defaults to false
+  charAnim2Loop?: boolean; // always defaults to false
+  charAnim3Loop?: boolean; // always defaults to false
+  // charAnim4Loop?: boolean;
+  // charAnim5Loop?: boolean;
+  charLipAnim?: CharLipAnim;
+  lipAnimDuration?: number;
+};
+
 // Character group
 type Character = {
   // charSpine: string;
+  charLabel: string;
   charPosition: CharPosition;
-  charAnim1: CharAnim1;
-  charAnim2: CharAnim2;
-  charAnim3: CharAnim3;
-  charAnim4: CharAnim4;
-  charAnim5: CharAnim5;
-  charAnim1Loop: boolean;
-  charAnim2Loop: boolean;
-  charAnim3Loop: boolean;
-  charAnim4Loop: boolean;
-  charAnim5Loop: boolean;
-  charLipAnim: CharLipAnim;
-  lipAnimDuration: number;
   charEffect: CharEffect;
-  lip: string;
-} & CharacterSpine;
+  // lip: string;
+} & CharSpine &
+  CharAnim;
 
-export type { CharacterSpine, Character };
+export type { CharSpine, CharAnim, Character, CharPosition, CharEffect };
