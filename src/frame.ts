@@ -97,6 +97,11 @@ function createFrame(frameData: FrameData): FrameInstance {
       this.voice = voice
       return this
     },
+    set: function(item: string, data: string) {
+      // @ts-ignore
+      this[item] = data
+      return this
+    },
     // TODO: check validity here
     normalize: function () {
       return JSON.parse(JSON.stringify(this));

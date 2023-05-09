@@ -50,6 +50,11 @@ async function main() {
       bg: "00007",
     })
   );
+  story.addFrame(createFrame({
+    waitType: "time",
+    waitTime: 7000,
+    se: "se-custom-000",
+  }))
   story.addFrame(
     createFrame({
       charLabel: meguru,
@@ -103,7 +108,7 @@ async function main() {
         charId: "1040010060",
       })
       .setAnim({
-        charAnim1: "wait3",
+        charAnim1: "wait1",
         charAnim2: "blank",
         charLipAnim: "lip_smile",
         // lipAnimDuration: 100
@@ -130,7 +135,9 @@ async function main() {
         charId: "1040020060",
       })
       .setAnim({
-        // lipAnimDuration: 100
+        charAnim1: "smile1",
+        // charAnim1Loop: false
+        charAnim2: "blank",
       })
       .setPosition({
         x: 310,
@@ -156,7 +163,11 @@ async function main() {
         speaker: meguru,
         text: "————\r\nにへへ",
       })
-      .setAnim({})
+      .setAnim({
+        charAnim1: "wait2",
+        charAnim2: "face_shy",
+        charLipAnim: "lip_wait",
+      })
       .setVoice("custom/900101/drama_05")
   );
   story.addFrame(
@@ -165,9 +176,12 @@ async function main() {
     })
       .setFrameText({
         speaker: meguru,
-        text: "私たち、何だか遠くまで歩いてきたなぁと思って",
+        text: "私たち\r\n何だか遠くまで歩いてきたなぁと思って",
       })
-      .setAnim({})
+      .setAnim({
+        charAnim1: "wait1",
+        charAnim2: "face_shy",
+      })
       .setVoice("custom/900101/drama_06")
   );
   story.addFrame(
@@ -181,21 +195,29 @@ async function main() {
         speaker: meguru,
         text: "覚えてる?\r\nここまでにあったいろんなこと、いろんな思い出",
       })
-      .setAnim({})
+      .setAnim({
+        charAnim1: "shy2",
+        charAnim2: "face_shy",
+        charLipAnim: "lip_wait",
+      })
       .setVoice("custom/900101/drama_07")
   );
   story.addFrame(meguruDisappear);
+  story.addFrame(hioriAppear.copy().setPosition({ x: 568 }));
   story.addFrame(
     createFrame({
       charLabel: hiori,
       voice: "custom/900101/drama_08",
     })
-      .setAnim({})
+      .setAnim({
+        charAnim1: "surp1",
+        charAnim2: "face_smile",
+        charLipAnim: "lip_smile",
+      })
       .setFrameText({
         speaker: hiori,
-        text: "覚えてるよ\r\n一緒にお仕事してレッスンして",
+        text: "覚えてるよ\r\n一緒にお仕事して、レッスンして",
       })
-      .setPosition({ x: 568 })
       .setCharEffect({ alpha: 1 })
   );
   story.addFrame(hioriDisappear);
@@ -204,21 +226,29 @@ async function main() {
       charLabel: mano,
       voice: "custom/900101/drama_09",
     })
-      .setAnim({})
+      .setAnim({
+        charAnim1: "smile2",
+        charLipAnim: "lip_smile2",
+      })
       .setFrameText({
         speaker: mano,
-        text: "うん、一緒に遊んでお喋りして",
+        text: "うん\r\n一緒に遊んで、お喋りして",
       })
       .setPosition({ x: 568 })
       .setCharEffect({ alpha: 1 })
   );
   story.addFrame(manoDisappear);
+  story.addFrame(meguruAppear.copy());
   story.addFrame(
     createFrame({
       charLabel: meguru,
       voice: "custom/900101/drama_10",
     })
-      .setAnim({})
+      .setAnim({
+        charAnim1: "wait1",
+        charAnim2: "face_shy",
+        charLipAnim: "lip_smile",
+      })
       .setFrameText({
         speaker: meguru,
         text: "たくさん笑って泣いたよね",
@@ -231,7 +261,11 @@ async function main() {
       charLabel: mano,
       voice: "custom/900101/drama_11",
     })
-      .setAnim({})
+      .setAnim({
+        charAnim1: "shy1",
+        charAnim2: "face_wait",
+        charLipAnim: "lip_smile",
+      })
       .setFrameText({
         speaker: mano,
         text: "ね、初めてステージに立った日のことも覚えてる?",
@@ -239,15 +273,19 @@ async function main() {
       .setCharEffect({ alpha: 1 })
   );
   story.addFrame(manoDisappear);
+  story.addFrame(meguruAppear);
   story.addFrame(
     createFrame({
       charLabel: meguru,
       voice: "custom/900101/drama_12",
     })
-      .setAnim({})
+      .setAnim({
+        charAnim1: "smile2",
+        charLipAnim: "lip_smile",
+      })
       .setFrameText({
         speaker: meguru,
-        text: "もちろん、みんな緊張で震えちゃって",
+        text: "もちろん\r\nみんな緊張で震えちゃって",
       })
       .setCharEffect({ alpha: 1 })
   );
@@ -255,31 +293,47 @@ async function main() {
   story.addFrame(
     createFrame({
       charLabel: meguru,
-    }).setPosition({
-      x: 796,
     })
+      .setPosition({
+        x: 796,
+      })
+      .setAnim({
+        charLipAnim: "lip_smile_s",
+      })
   );
+  story.addFrame(hioriAppear);
   story.addFrame(
     createFrame({
       charLabel: hiori,
       voice: "custom/900101/drama_13",
     })
-      .setAnim({})
+      .setAnim({
+        charAnim1: "smile2",
+        charLipAnim: "lip_smile",
+      })
       .setFrameText({
         speaker: hiori,
-        text: "でも、めぐるが抱きしめてくれた",
+        text: "でも\r\nめぐるが抱きしめてくれた",
       })
       .setPosition({ x: 310 })
       .setCharEffect({ alpha: 1 })
   );
   story.addFrame(
-    meguruAppear.copy().setVoice("custom/900101/drama_14").setFrameText({
-      speaker: meguru,
-      text: "へへ、ちょっと強引だったかもだけど",
-    })
+    meguruAppear
+      .copy()
+      .setVoice("custom/900101/drama_14")
+      .setFrameText({
+        speaker: meguru,
+        text: "へへ\r\nちょっと強引だったかもだけど",
+      })
+      .setAnim({
+        charAnim1: "think",
+        charLipAnim: "lip_smile",
+      })
   );
   story.addFrame(hioriDisappear);
   story.addFrame(meguruDisappear);
+  story.addFrame(manoAppear);
   story.addFrame(
     manoAppear
       .copy()
@@ -291,6 +345,12 @@ async function main() {
         speaker: mano,
         text: "ううん\r\nぎゅってしてくれて、とっても安心したんだよ",
       })
+      .setAnim({
+        charAnim1: "no2",
+        charAnim1Loop: false,
+        charAnim2: "blank",
+        charLipAnim: "lip_smile2",
+      })
   );
   story.addFrame(
     manoAppear.copy().setVoice("custom/900101/drama_16").setFrameText({
@@ -299,18 +359,58 @@ async function main() {
     })
   );
   story.addFrame(
+    hioriAppear.copy().setPosition({
+      x: 200,
+    })
+  );
+  story.addFrame(
+    meguruAppear.copy().setPosition({
+      x: 936,
+    })
+  );
+  story.addFrame(
+    hioriAppear.copy().setAnim({
+      charAnim1: "smile2",
+      charLipAnim: "lip_smile_s",
+    })
+  );
+  story.addFrame(
+    meguruAppear.copy().setAnim({
+      charAnim1: "wait4",
+      charLipAnim: "lip_smile_s",
+    })
+  );
+  story.addFrame(
+    createFrame({
+      textFrame: "off",
+      waitType: "time",
+      waitTime: 2000,
+    }).set("se", "se-custom-001")
+  );
+  story.addFrame(
     manoAppear.copy().setVoice("custom/900101/drama_17").setFrameText({
       speaker: mano,
       text: "灯織ちゃん、めぐるちゃん",
     })
   );
   story.addFrame(
-    manoAppear.copy().setVoice("custom/900101/drama_18").setFrameText({
-      speaker: mano,
-      text: "ここまで一緒にいてくれて、ありがとう",
+    manoAppear
+      .copy()
+      .setVoice("custom/900101/drama_18")
+      .setFrameText({
+        speaker: mano,
+        text: "ここまで一緒にいてくれて、ありがとう",
+      })
+      .setAnim({
+        charAnim1: "smile2",
+      })
+  );
+  story.addFrame(
+    manoAppear.copy().setAnim({
+      charAnim1: "wait",
     })
   );
-  story.addFrame(manoDisappear);
+  // story.addFrame(manoDisappear);
   // story.addFrame(
   //   manoAppear.copy().setPosition({
   //     x: 310
@@ -321,12 +421,12 @@ async function main() {
     meguruAppear
       .copy()
       .setVoice("custom/900101/drama_19")
-      .setPosition({
-        x: 568,
-      })
       .setFrameText({
         speaker: meguru,
         text: "うん、私も",
+      })
+      .setAnim({
+        charAnim1: "smile2",
       })
   );
   story.addFrame(
@@ -336,12 +436,25 @@ async function main() {
     })
   );
   story.addFrame(
-    meguruAppear.copy().setVoice("custom/900101/drama_21").setFrameText({
-      speaker: meguru,
-      text: "私、二人のことが大好き",
+    meguruAppear
+      .copy()
+      .setVoice("custom/900101/drama_21")
+      .setFrameText({
+        speaker: meguru,
+        text: "私、二人のことが大好き",
+      })
+      .setAnim({
+        charAnim1: "think",
+        charAnim2: "face_close",
+        charLipAnim: "lip_smile",
+      })
+  );
+  story.addFrame(
+    meguruAppear.copy().setAnim({
+      charAnim1: "wait",
     })
   );
-  story.addFrame(meguruDisappear);
+  // story.addFrame(meguruDisappear);
   story.addFrame(
     hioriAppear
       .copy()
@@ -350,106 +463,200 @@ async function main() {
         speaker: hiori,
         text: "私からも、ありがとう",
       })
-      .setPosition({
-        x: 568,
-      })
-  );
-  story.addFrame(
-    hioriAppear.copy().setVoice("custom/900101/drama_23").setFrameText({
-      speaker: hiori,
-      text: "二人とユニットを組めてよかった",
-    })
-  );
-  story.addFrame(
-    hioriAppear.copy().setVoice("custom/900101/drama_24").setFrameText({
-      speaker: hiori,
-      text: "三人一緒だから、ここまで来れた",
-    })
-  );
-  // story.addFrame(
-  //   manoAppear.copy().setPosition({
-  //     x: 568,
-  //   })
-  // );
-  story.addFrame(
-    meguruAppear
-      .copy()
-      .setPosition({
-        x: 936,
-      })
       .setAnim({
-        charLipAnim: "blank",
-      })
-  );
-  story.addFrame(
-    createFrame({ charLabel: mano })
-      .setAnim({
-        charLipAnim: "blank",
-      })
-      .setCharEffect({
-        alpha: 1,
-      })
-      .setPosition({
-        x: 568,
+        charAnim1: "smile1",
+        charAnim2: "eye_left",
       })
   );
   story.addFrame(
     hioriAppear
       .copy()
-      .setPosition({
-        x: 200,
+      .setVoice("custom/900101/drama_23")
+      .setFrameText({
+        speaker: hiori,
+        text: "二人とユニットを組めてよかった",
       })
+      .setAnim({
+        charAnim1: "wait1",
+        charAnim2: "eye_left",
+      })
+  );
+  story.addFrame(
+    hioriAppear
+      .copy()
+      .setVoice("custom/900101/drama_24")
+      .setFrameText({
+        speaker: hiori,
+        text: "三人一緒だから、ここまで来れた",
+      })
+      .setAnim({
+        charAnim1: "wait",
+        charAnim2: "eye_left",
+      })
+  );
+  story.addFrame(
+    hioriAppear
+      .copy()
       .setVoice("custom/900101/drama_25")
       .setFrameText({
         speaker: hiori,
         text: "それから",
       })
+      .setAnim({
+        charAnim1: "wait3",
+        charAnim3: "eye_front",
+      })
   );
   story.addFrame(
-    meguruAppear.copy().setVoice("custom/900101/drama_26").setFrameText({
-      speaker: meguru,
-      text: "プロデューサー",
+    manoAppear.copy().setAnim({
+      charAnim1: "wait2",
+      charLipAnim: "lip_smile_s",
     })
   );
   story.addFrame(
-    hioriAppear.copy().setVoice("custom/900101/drama_27").setFrameText({
-      speaker: hiori,
-      text: "ね、プロデューサー",
+    meguruAppear
+      .copy()
+      .setVoice("custom/900101/drama_26")
+      .setFrameText({
+        speaker: meguru,
+        text: "プロデューサー",
+      })
+      .setAnim({
+        charAnim1: "smile1",
+      })
+  );
+  story.addFrame(createFrame(meguruAppear.copy().setAnim({
+    charAnim1: "wait",
+  })))
+  story.addFrame(
+    hioriAppear
+      .copy()
+      .setVoice("custom/900101/drama_27")
+      .setFrameText({
+        speaker: hiori,
+        text: "ね、プロデューサー",
+      })
+      .setAnim({
+        charAnim1: "wait1",
+        charAnim2: "face_serious",
+      })
+  );
+  story.addFrame(
+    createFrame({
+      textFrame: "off",
+      waitType: "time",
+      waitTime: 2000,
+    }).set("se", "se-custom-002")
+  );
+  story.addFrame(
+    createFrame({}).setFrameText({
+      speaker: "プロデューサー",
+      text: "はは…",
+      textCtrl: "p",
+      textFrame: "002",
     })
   );
   story.addFrame(
-    hioriAppear.copy().setVoice("custom/900101/drama_28").setFrameText({
-      speaker: hiori,
-      text: "あなたが一緒にいてくれたから\r\n私たち、ここまで来ることができました",
+    createFrame({
+      textFrame: "off",
+      waitType: "time",
+      waitTime: 1000,
     })
   );
   story.addFrame(
-    manoAppear.copy().setVoice("custom/900101/drama_29").setFrameText({
-      speaker: mano,
-      text: "私たちの前には、いろんな道があって",
+    hioriAppear
+      .copy()
+      .setVoice("custom/900101/drama_28")
+      .setFrameText({
+        speaker: hiori,
+        text: "あなたが一緒にいてくれたから\r\n私たち、ここまで来ることができました",
+      })
+      .setAnim({
+        charAnim1: "blank",
+      })
+  );
+  story.addFrame(
+    manoAppear
+      .copy()
+      .setVoice("custom/900101/drama_29")
+      .setFrameText({
+        speaker: mano,
+        text: "私たちの前には、いろんな道があって",
+      })
+      .setAnim({
+        charAnim1: "wait2",
+        charLipAnim: "lip_smile2"
+      })
+  );
+  story.addFrame(
+    manoAppear
+      .copy()
+      .setVoice("custom/900101/drama_30")
+      .setFrameText({
+        speaker: mano,
+        text: "その中には\r\nマイクを下ろす道もあったと思うんです",
+      })
+      .setAnim({
+        charAnim1: "sad1",
+        charAnim2: "face_surp",
+        charLipAnim: "lip_sad"
+      })
+  );
+  story.addFrame(
+    createFrame({}).setFrameText({
+      speaker: "プロデューサー",
+      text: "…………",
+      textCtrl: "p",
+      textFrame: "002",
     })
   );
   story.addFrame(
-    manoAppear.copy().setVoice("custom/900101/drama_30").setFrameText({
-      speaker: mano,
-      text: "その中には\r\nマイクを下ろす道もあったと思うんです",
-    })
-  );
-  story.addFrame(
-    hioriAppear.copy().setVoice("custom/900101/drama_31").setFrameText({
-      speaker: hiori,
-      text: "でも、まだその道は選びません",
-    })
-  );
-  story.addFrame(
-    meguruAppear.copy().setVoice("custom/900101/drama_32").setFrameText({
-      speaker: meguru,
-      text: "ねえ、行こう\r\n光の先、あの日の先に",
+    createFrame({
+      waitType: "time",
+      waitTime: 1500,
     })
   );
   story.addFrame(manoDisappear);
   story.addFrame(hioriDisappear);
   story.addFrame(meguruDisappear);
+  story.addFrame(
+    createFrame({})
+      .setVoice("custom/900101/drama_31")
+      .setFrameText({
+        speaker: hiori,
+        text: "でも、まだその道は選びません",
+      })
+      .set("bg", "custom-001")
+  );
+  story.addFrame(
+    createFrame({}).copy().setVoice("custom/900101/drama_32").setFrameText({
+      speaker: meguru,
+      text: "ねえ、行こう",
+    })
+  );
+  story.addFrame(
+    createFrame({
+      waitType: "time",
+      waitTime: 1000,
+    })
+  );
+  story.addFrame(
+    createFrame({}).copy().setVoice("custom/900101/drama_32_1").setFrameText({
+      speaker: meguru,
+      text: "光の先、あの日の先に",
+    })
+  );
+  story.addFrame(manoDisappear);
+  story.addFrame(hioriDisappear);
+  story.addFrame(meguruDisappear);
+  story.addFrame(
+    createFrame({
+      textFrame: "off",
+      waitType: "time",
+      waitTime: 2000,
+      bg: "00000",
+    })
+  );
   story.addFrame(
     createFrame({
       charAnim1: "wait",
@@ -550,23 +757,51 @@ async function main() {
   story.addFrame(meguruDisappear.copy().setCharLabel("meguru"));
   story.addFrame(
     createFrame({
-      bg: "custom-cg1",
-      voice: "custom/900101/drama_36",
-    }).setFrameText({
-      speaker: mano,
-      text: "これからもずっと一緒に",
+      textFrame: "off",
+      waitType: "time",
+      waitTime: 1000,
+      bg: "00000",
     })
   );
   story.addFrame(
-    createFrame({ voice: "custom/900101/drama_37" }).setFrameText({
+    createFrame({
+      voice: "custom/900101/drama_36",
+    }).setFrameText({
+      speaker: mano,
+      text: "これからも、ずっと一緒に",
+    })
+  );
+  story.addFrame(
+    createFrame({
+      voice: "custom/900101/drama_37",
+      bg: "custom-003",
+    }).setFrameText({
       speaker: mano,
       text: "輝きをみんなに届けよう",
     })
   );
   story.addFrame(
-    createFrame({ voice: "custom/900101/drama_38" }).setFrameText({
+    createFrame({
+      voice: "custom/900101/drama_38",
+      bg: "custom-002",
+    }).setFrameText({
       speaker: "一同",
-      text: "イルミネーションスターズ!",
+      text: "イルミネーション————",
+    })
+  );
+  story.addFrame(
+    createFrame({
+      waitType: "time",
+      waitTime: 500,
+    })
+  );
+  story.addFrame(
+    createFrame({
+      voice: "custom/900101/drama_39",
+      bg: "custom-004",
+    }).setFrameText({
+      speaker: "一同",
+      text: "スターズ!",
     })
   );
   story.output("F:\\Projects\\shiny-proxy\\assets\\json\\custom\\story.json");

@@ -47,6 +47,7 @@ type FrameInstance = {
   setFrameText(frameText: FrameText): FrameInstance;
   clearText(): FrameInstance;
   setVoice(voice: string): FrameInstance;
+  set(item: string, data: string): FrameInstance;
   normalize(): FrameData;
 } & FrameData;
 
