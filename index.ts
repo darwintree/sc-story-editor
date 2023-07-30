@@ -804,7 +804,7 @@ async function main() {
       text: "スターズ!",
     })
   );
-  story.output("F:\\Projects\\shiny-proxy\\assets\\json\\custom\\story.json");
+  story.output("./story.json");
 }
 
 main();
